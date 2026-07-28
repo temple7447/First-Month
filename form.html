@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+
+        }
+        .form-container{
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            width: 600px;
+            height: 600px;
+            background-color: aquamarine;
+            padding:20px;
+        }
+        .formline{
+           
+        width: 100%;
+        display: flex;
+        gap:10px
+       
+        }
+        .title{
+            width:40%;
+            text-align: right;
+
+        }
+    </style>
+</head>
+
+<body>
+    
+     <div class="form-container">
+         <div class="formline">
+            <div class="title">Enter First Name</div>
+            <input type="text" id="firstname" placeholder="enter your first name" />
+        </div>
+        
+        <div class="formline">
+            <div class="title" >Enter Last Name </div>
+            <input type="text" id="lastname" placeholder="enter your last name" />
+        </div>
+
+
+        <div class="formline">
+            <div class="title" >Enter ago </div>
+            <input type="number" id="age" placeholder="enter age" />
+        </div>
+        <div style="display:none; color:red; font-size:10px; text-align:center; " id="errormessage"></div>
+
+<button onclick="btnOnclick()" >Login</button>
+        
+
+
+
+ 
+
+    </div>
+
+<script>
+
+    
+
+  // function calc(a, b, c){
+ 
+        /// return console.log("i am calling the calc function")
+     //   return console.log(a*b-a+b*c)
+
+  //  }
+
+
+
+
+
+
+
+
+  // function calc(a, b){
+ 
+        /// return console.log("i am calling the calc function")
+      //  return a*b-a+b
+
+  //  }
+
+
+    
+ //  const result =  calc(5, 3); //13
+ //  console.log(result)
+ //   console.warn("the first calc is out the top of me");
+ //  const results =    calc(9, 2, 2); //11
+    //     console.log(results)
+
+  
+    function btnOnclick(){
+
+     const firstname =   document.getElementById("firstname").value
+      const lastname =  document.getElementById("lastname").value
+      const stringage =  document.getElementById("age").value
+      const age = Number(stringage)
+
+  
+
+
+        switch(true){
+            case age < 18:
+                document.getElementById("errormessage").style.display="flex"
+                document.getElementById("errormessage").innerText = `${firstname} ${lastname} you are under 18 so you can't register`
+            break;
+            default:
+                document.getElementById("errormessage").style.display="flex"
+                document.getElementById("errormessage").innerText = `${firstname} ${lastname} you are welcome to this platform`
+
+        }
+
+
+
+
+
+        return console.log(firstname, lastname, age)
+
+    }
+
+
+
+
+</script>
+</body>
+</html>
